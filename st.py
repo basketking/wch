@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-file_path = r'C:\Users\barnabas.nemeth\OneDrive - TeqBall KFT\Data Analysis\Datateq\Players\results_individuals.xlsx'
+file_path = r'https://github.com/basketking/wch/blob/main/results_individuals.xlsx'
 df = pd.read_excel(file_path)
 df.head()
 df.columns
@@ -12,8 +12,6 @@ df_group = df.groupby('playerAName').agg({
     'pointTotal_X': [('sum_pointTotal_X', 'sum'), ('average_pointTotal_X', 'mean')],
     'setsWon_A': [('sum_setsWon_A', 'sum'), ('average_setsWon_A', 'mean')],
     'setsWon_A': [('sum_setsWon_X', 'sum'), ('average_setsWon_X', 'mean')],
-
-
 })
 df_group.columns = df_group.columns.get_level_values(0)
 df_group
