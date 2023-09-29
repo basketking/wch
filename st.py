@@ -2,8 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-file_path = r'https://github.com/basketking/wch/blob/main/results_individuals.xlsx?raw=true'
-df = pd.read_excel(file_path)
+df = pd.read_excel('https://github.com/basketking/wch/blob/main/results_individuals.xlsx?raw=true')
 df.head()
 df.columns
 df_group = df.groupby('playerAName').agg({
