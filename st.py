@@ -12,5 +12,5 @@ df_group = df.groupby('playerAName').agg({
 })
 # df_group.columns = df_group.columns.get_level_values(0)
 
-st.table(df_group)
+st.dataframe(df_group)
 
