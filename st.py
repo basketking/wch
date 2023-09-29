@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 
 file_path = r'https://github.com/basketking/wch/blob/main/results_individuals.xlsx'
-df = pd.read_excel(file_path)
+df = pd.read_excel(file_path,engine='openpyxl')
 df.head()
 df.columns
 df_group = df.groupby('playerAName').agg({
