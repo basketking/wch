@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
+st.set_page_config(layout="wide")
+
 df = pd.read_excel('https://github.com/basketking/wch/blob/main/results_individuals.xlsx?raw=true')
 df_group = df.groupby('playerAName').agg({
     'associationPlayer_A': 'count',
