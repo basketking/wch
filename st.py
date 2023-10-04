@@ -10,7 +10,6 @@ df_group = df.groupby('playerAName').agg({
     'setsWon_A': [('sum_setsWon_A', 'sum'), ('average_setsWon_A', 'mean')],
     'setsWon_A': [('sum_setsWon_X', 'sum'), ('average_setsWon_X', 'mean')],
 })
-# df_group.columns = df_group.columns.get_level_values(0)
-
+df_group.columns = [' '.join(col).strip() for col in df_group.columns.values]
 st.dataframe(df_group)
 
